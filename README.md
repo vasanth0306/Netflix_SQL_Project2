@@ -70,3 +70,14 @@ FROM netflix
 WHERE release_year = 2020;
 ```
 Objective: Retrieve all movies released in a specific year.
+### 4. Find the Top 5 Countries with the Most Content on Netflix
+```sql
+SELECT
+	UNNEST(STRING_TO_ARRAY(country,',')) AS new_country,
+	count(show_id) AS total_content
+FROM netflix
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 5;
+```
+Objective: Identify the top 5 countries with the highest number of content items.
