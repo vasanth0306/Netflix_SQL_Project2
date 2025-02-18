@@ -29,3 +29,12 @@ CREATE TABLE netflix
 );
 ```
 # Business Problems and Solutions
+1. Count the Number of Movies vs TV Shows
+```sql
+SELECT 
+    type,
+    COUNT(*)
+FROM netflix
+GROUP BY 1;
+```
+Objective: Determine the distribution of content types on Netflix.
